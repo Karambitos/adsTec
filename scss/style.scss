@@ -1,0 +1,241 @@
+@import "vendors/normalize";
+@import "fonts";
+
+$white: #fff;
+$black: #000;
+$text: #7e7e7e;
+$green: #27ff00;
+$blue: #00bffc;
+
+body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "HelveticaNeue-CondensedRegular", sans-serif;
+  color: $text;
+}
+
+* {
+  transition: 300ms;
+  box-sizing: border-box;
+}
+
+a {
+  color: $text;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 1670px;
+  padding: 0 10px;
+  margin: auto;
+  @media (min-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  .logo {
+    @media (max-width: 768px) {
+      max-width: 100px;
+    }
+  }
+}
+
+.lang-switcher {
+  a {
+    font-family: "HelveticaNeue-Light", sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    text-transform: uppercase;
+  }
+  a.active {
+    pointer-events: none;
+    font-family: "HelveticaNeue-Bold", sans-serif;
+  }
+
+  a + a {
+    padding-left: 13px;
+    margin-left: 13px;
+    border-left: 1px solid $blue;
+  }
+}
+
+.link-wrapper {
+  color: $white;
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .link {
+    font-family: "HelveticaNeue-Light", sans-serif;
+    border-radius: 13px;
+    position: relative;
+    display: block;
+    color: inherit;
+    overflow: hidden;
+    max-height: 40vh;
+
+    @media (min-width: 1024px) {
+      max-width: 812px;
+      max-height: unset;
+    }
+
+    .link-box {
+      margin: 25px 20px;
+      position: absolute;
+      bottom: 0;
+      overflow: hidden;
+      z-index: 4;
+
+      @media (min-width: 1024px) {
+        padding-left: 13px;
+        border-left: 2px solid $green;
+      }
+
+      &.color-ref {
+        border-color: $blue;
+      }
+    }
+    .link-box--title {
+      font-size: 20px;
+      line-height: 36px;
+      margin-top: 0;
+      margin-bottom: 11px;
+      color: $green;
+      @media (min-width: 1024px) {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 23px;
+        color: $white;
+      }
+    }
+    .color-ref {
+      .link-box--title {
+        color: $blue;
+        @media (min-width: 1024px) {
+          color: $white;
+        }
+      }
+    }
+    .link-box--text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 18px;
+      padding-left: 13px;
+      border-left: 2px solid $green;
+
+      @media (min-width: 1024px) {
+        max-height: 0;
+        font-size: 16px;
+        line-height: 22px;
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(transparent, 50%, $black);
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+    @media (min-width: 1024px) {
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+
+        .link-box--title {
+          color: $green;
+        }
+        .link-box--text {
+          max-height: 200px;
+        }
+
+        .color-ref {
+          .link-box--title {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  .link:first-child {
+    margin-bottom: 10px;
+    @media (min-width: 1024px) {
+      margin-right: 16px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer-main {
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-left: 18px;
+  line-height: 22px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  span {
+    display: block;
+  }
+  .title {
+    font-family: "HelveticaNeue-Bold", sans-serif;
+  }
+  .footer-box {
+    padding-left: 16px;
+    padding-bottom: 20px;
+    border-left: 1px solid $blue;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .footer-box--ref {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+    p:first-child {
+      @media (min-width: 768px) {
+        margin-right: 115px;
+      }
+    }
+  }
+}
