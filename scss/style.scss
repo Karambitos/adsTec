@@ -52,6 +52,22 @@ img {
   }
 }
 
+.iv {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.containerIV {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 500px;
+}
+
+
 .header {
   display: flex;
   align-items: center;
@@ -238,4 +254,67 @@ img {
       }
     }
   }
+}
+
+
+
+
+
+
+.accordion {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+
+.accordion-header {
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.accordion-header span {
+  max-width: 100%;
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+.accordion-body {
+  color: #444;
+  font-size: 14px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity .3s 
+}
+
+.accordion-body.active {
+  height: 100%;
+  opacity: 1;
+  
+  padding: 5px;
+}
+
+
+.arrow {
+  transition: transform .2s linear;
+}
+.accordion:has(.active) .arrow {
+  transform: rotate(180deg);
 }
